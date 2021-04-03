@@ -10,7 +10,7 @@ class Product extends react.Component {
         const divStyle = {
             border: '2px ridge white', 
             backgroundColor: 'white',
-            padding: '0.25rem',
+            padding: '0.1rem',
             display: 'flex',
             flexDirection: 'column'
           };
@@ -27,11 +27,37 @@ class Product extends react.Component {
                 color: 'green'
         };
 
+        const buttonStyle = {
+            font: 'inherit',
+            textDecoration: 'none',
+            backgroundColor: '#EEEEEE',
+            color: '#333333',
+            padding: '0.6rem 0.5rem',
+            borderTop: '1px solid #CCCCCC',
+            borderRight: '1px solid #333333',
+            borderBottom: '1px solid #333333',
+            borderLeft: '1px solid #CCCCCC',
+        }
+
+        const voteFunc = () => {
+
+        };
+
         return (  
         <div style={divStyle} className="ui items">
-           <h4 style={nameStyle} >  {this.props.name} </h4>
-           <h5 style={priceStyle}> {this.props.price} </h5>
-           <h6 style={marqueStyle}> {this.props.marque} </h6>
+           Name : <p style={nameStyle} >  {this.props.name} </p>
+           Price : <p style={priceStyle}> {this.props.price} </p>
+           Marque : <p style={marqueStyle}> {this.props.marque} </p>
+           <button type="button"
+           style = {buttonStyle} >  
+
+                <span role="img" aria-label="Fox">
+                    👍
+                </span>
+
+            </button>
+           
+           Rating Score : <p style={{color : 'black'}}>  </p>
       </div>
         );
     }
