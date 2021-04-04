@@ -60,7 +60,7 @@ class Product extends react.Component {
             
             e.preventDefault();
             this.setState({
-                count: 1,
+                count: this.state.count + 1,
             })
             console.log('Clicked Button');
         };
