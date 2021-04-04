@@ -1,9 +1,14 @@
 import react from 'react';
+import React, { useState } from "react";
+import ReactDOM from "react-dom";
 
 class Product extends react.Component {
     constructor(props) {
         super(props);
-        this.state = {  }
+        this.state = {
+            count:0,
+        };
+        
     }
     render() { 
 
@@ -30,17 +35,34 @@ class Product extends react.Component {
         const buttonStyle = {
             font: 'inherit',
             textDecoration: 'none',
-            backgroundColor: '#EEEEEE',
+            backgroundColor: 'blue',
             color: '#333333',
             padding: '0.6rem 0.5rem',
             borderTop: '1px solid #CCCCCC',
             borderRight: '1px solid #333333',
             borderBottom: '1px solid #333333',
             borderLeft: '1px solid #CCCCCC',
+            width: '50px',
+            height: '40px',
+
+            position: 'relative',
+            background: '#f3f0f1',
+            marginBottom: '25px',
+            
+            textAlign: 'center',
+            cursor: "pointer",
+            transition: 'all 0.1s ease-in-out',
+            borderRadius: '50%'
+
         }
 
-        const voteFunc = () => {
-
+        const voteFunc = (e) => {
+            
+            e.preventDefault();
+            this.setState({
+                count: 1,
+            })
+            console.log('Clicked Button');
         };
 
         return (  
@@ -48,16 +70,16 @@ class Product extends react.Component {
            Name : <p style={nameStyle} >  {this.props.name} </p>
            Price : <p style={priceStyle}> {this.props.price} </p>
            Marque : <p style={marqueStyle}> {this.props.marque} </p>
-           <button type="button"
-           style = {buttonStyle} >  
+           <button style={buttonStyle} onClick={voteFunc} type="submit"
+            >  
 
-                <span role="img" aria-label="Fox">
-                    👍
+                <span  role="img" aria-label="Fox">
+                  ❤
                 </span>
 
             </button>
            
-           Rating Score : <p style={{color : 'black'}}>  </p>
+           Rating Score : <p style={{color : 'black'}}> {this.state.count} </p>
       </div>
         );
     }
