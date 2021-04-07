@@ -67,17 +67,18 @@ class Product extends react.Component {
 
         return (  
         <div style={divStyle} className="ui items">
-           Name : <p style={nameStyle} >  {this.props.name} </p>
-           Price : <p style={priceStyle}> {this.props.price} </p>
-           Marque : <p style={marqueStyle}> {this.props.marque} </p>
-           <button style={buttonStyle} onClick={voteFunc} type="submit"
-            >  
 
-                <span  role="img" aria-label="Fox">
-                  ❤
-                </span>
-
-            </button>
+        
+           Name : <div style={nameStyle} >  {this.props.name} </div>
+           Price : <div style={priceStyle}> {this.props.price} </div>
+           Marque : <div style={marqueStyle}> {this.props.marque} </div>
+           <div>
+           Like : <button style={buttonStyle} onClick={voteFunc} type="submit"> 
+                        <span  role="img" aria-label="Fox">
+                        ❤
+                        </span>
+                </button>
+            </div>
            
            Rating Score : <p style={{color : 'black'}}> {this.state.count} </p>
       </div>
